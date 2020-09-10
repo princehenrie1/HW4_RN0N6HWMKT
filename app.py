@@ -5,7 +5,6 @@ import requests
 import datetime
 import csv
 
-
 app = Flask(__name__)
 
 url = "https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_daily_reports/"
