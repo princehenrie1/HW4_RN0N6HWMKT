@@ -47,37 +47,52 @@
     <div class="grey_80">
       <!-- status part -->
       <div class="status">
-        <div class="col-3 status_break">
+        <div class="status_break">
           <img src="../static/img/globe.png" alt="" />
           <div class="status_side">
             <h6>Stats Overview</h6>
-            <select name="west_africa" id="global_tins">
-              {% for country in countries %}
-                <option value="{{country}}">{{country}}</option>
-              {% endfor %}
-            </select>
+            <form action="/" method="post" id="myform">
+              <select name="west_africa" id="global_tins" onchange="document.getElementById('myform').submit()">
+                <option value="Benin" selected="selected">Benin</option>
+                <option value="Burkina Faso">Burkina Faso</option>
+                <option value="Cape Verde">Cape Verde</option>
+                <option value="Gambia">Gambia</option>
+                <option value="Ghana">Ghana</option>
+                <option value="Guinea">Guinea</option>
+                <option value="Guinea-Bissau">Guinea-Bissau</option>
+                <option value="Cote d'Ivoire">Cote d'Ivoire</option>
+                <option value="Liberia">Liberia</option>
+                <option value="Mali">Mali</option>
+                <option value="Mauritania">Mauritania</option>
+                <option value="Niger">Niger</option>
+                <option value="Nigeria">Nigeria</option>
+                <option value="Senegal">Senegal</option>
+                <option value="Sierra Leone">Sierra Leone</option>
+                <option value="Togo">Togo</option>
+              </select>
+            </form>
           </div>
         </div>
         <div class="status_break">
           <img src="../static/img/active.png" alt="" />
           <div class="status_side">
-            <h6>Total Coronavirus Cases</h6>
-            {% if c %}
-            <p>1,245,347</p>
+            <h6>Total Cases</h6>
+            <p>{{data.Confirmed}}</p>
+
           </div>
         </div>
         <div class="status_break">
           <img src="../static/img/recovered.png" alt="" />
           <div class="status_side">
             <h6>Total Recovered</h6>
-            <p>259,544</p>
+          <p>{{data.Recovered}}</p>
           </div>
         </div>
         <div class="status_break">
           <img src="../static/img/deaths.png" alt="" />
           <div class="status_side">
             <h6>Total Deaths</h6>
-            <p>68,184</p>
+            <p>{{data.Deaths}}</p>
           </div>
         </div>
       </div>
@@ -989,10 +1004,10 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
-  
+
   <!-- footer -->
   <div class="foot_section">
     <div class="foot_80 row m-auto">
@@ -1000,7 +1015,7 @@
         <img src="../static/img/logo.png" alt="logo" />
         <h4 class="foot_h4 pl-3">Covid-19</h4>
         <p class="pt-5">
-          Henrie-Online an online market place built to cope with a promising
+          BernardDeDesigner an online marketplace built to cope with promising
           future
         </p>
       </div>
@@ -1016,8 +1031,8 @@
           </ul>
         </div>
         <div class="col-2 pt-5">
-          <li>T&C</li>
-          <li>FAQ</li>
+          <li>t&c</li>
+          <li>faq</li>
           <li>Privacy Policy</li>
         </div>
         <div class="col-5">
@@ -1043,7 +1058,7 @@
       <p>&COPY; Henrie-Online All rights reserved</p>
     </div>
   </div>
-  
+  <script src="/static/js/dom.js"></script>
 </body>
 
 </html>
